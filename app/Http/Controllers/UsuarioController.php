@@ -49,7 +49,8 @@ class UsuarioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $usuario = Usuario::find($id);
+        return view('usuarios.show', compact('usuario'));
     }
 
     /**
@@ -57,7 +58,8 @@ class UsuarioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $usuario = Usuario::find($id);
+        return view('usuarios.edit', compact('usuario'));
     }
 
     /**
@@ -65,7 +67,16 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $usuario = Usuario::find($id);
+        $usuario->fill($request->all());
+        $usuario->save();
+
+        // Agrega un mensaje flash a la sesión
+        session()->flash('message', 'Usuario actualizado con éxito');
+
+        // Redirige al usuario a la página que desees
+        return redirect()->route('usuarios.index');
+
     }
 
     /**
@@ -73,6 +84,13 @@ class UsuarioController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $usuario = Usuario::find($id);
+        $usuario->delete();
+
+        // Agrega un mensaje flash a la sesión
+        session()->flash('message', 'Usuario eliminado con éxito');
+
+        // Redirige al usuario a la página que desees
+        return redirect()->route('usuarios.index');
     }
 }
