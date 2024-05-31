@@ -33,10 +33,15 @@ class CursoController extends Controller
         $curso->nombre = $request->input('nombrecurso');
         $curso->descripcion = $request->input('descripcion');
 
+        if($request->hasFile('imagen')){
+            $curso->imagen = $request->file('imagen')->storePublicly('cursos', 'public');
+            // $course->imagen = $request->file('imagen')->store('public/cursos'); // otra manera
+        }
+
         $curso->save();
 
         // Agrega un mensaje flash a la sesión
-        session()->flash('message', 'Curso guardado con éxito');
+        session()->flash('message', 'Palabra guardada con éxito');
 
         // Redirige al usuario a la página que desees
         return redirect()->route('cursos.index');
@@ -47,7 +52,8 @@ class CursoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $curso = Curso::find($id);
+        return view('cursos.show', compact('curso'));
     }
 
     /**
@@ -55,7 +61,8 @@ class CursoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $curso = Curso::find($id);
+        return view('cursos.edit', compact('curso'));
     }
 
     /**
@@ -63,7 +70,20 @@ class CursoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $curso = Curso::find($id);
+        $curso->fill($request->except('imagen'));
+        if ($request->hasFile('imagen')){ //si desde ese campo viene un archivo hacer:
+            $curso->imagen = $request->file('imagen')->store('public/cursos');
+            $curso->save();
+        }else{
+            $curso->save();
+        }
+
+        // Agrega un mensaje flash a la sesión
+        session()->flash('message', 'Palabra actualizada con éxito');
+
+        // Redirige al usuario a la página que desees
+        return redirect()->route('cursos.index');
     }
 
     /**
@@ -71,6 +91,13 @@ class CursoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $curso = Curso::find($id);
+        $curso->delete();
+
+        // Agrega un mensaje flash a la sesión
+        session()->flash('message', 'Palabra eliminada con éxito');
+
+        // Redirige al usuario a la página que desees
+        return redirect()->route('cursos.index');
     }
 }

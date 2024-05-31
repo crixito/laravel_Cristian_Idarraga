@@ -21,13 +21,13 @@
         <label for="contrasenia" class="form-label">Contraseña</label> 
         <input type="password" class="form-control" value="{{$usuario->contrasenia}}" name="contrasenia" required="true">
     </div>
-    <div class="mb-3">
+    {{-- <div class="mb-3">
         <label for="rol" class="form-label">Rol</label>
         <select class="form-control" name="rol">
             <option value="estudiante" @if($usuario->rol == 'estudiante') selected @endif>Estudiante</option>
             <option value="maestro" @if($usuario->rol == 'maestro') selected @endif>Maestro</option>
         </select>
-    </div>
+    </div> --}}
     <button type="submit" class="btn btn-primary">Actualizar</button>
 </form> 
 @endsection

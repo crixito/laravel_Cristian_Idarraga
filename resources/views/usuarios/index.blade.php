@@ -20,13 +20,13 @@
                         <h5> {{$u->nombre}} </h5>
                         <p> <span style="font-weight: bold">Email:</span> {{$u->email}} </p>
                         <p> <span style="font-weight: bold">Contraseña:</span> {{$u->contrasenia}} </p> 
-                        <p> <span style="font-weight: bold">Rol:</span> {{$u->rol}} </p>
+                        {{-- <p> <span style="font-weight: bold">Rol:</span> {{$u->rol}} </p> --}}
                         <div class="d-flex">
-                            <a href="/usuarios/{{$u->id}}" class="btn btn-success mr-2">Ver detalles</a>
+                            <a href="/usuarios/{{$u->id}}" class="btn btn-success m-1 p-2" >Ver detalles</a>
                             <form action="/usuarios/{{$u->id}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                <button type="submit" class="btn btn-danger m-1 p-2" >Eliminar</button>
                             </form> 
                         </div>                                                                                              
                     </div>

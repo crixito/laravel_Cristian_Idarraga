@@ -12,7 +12,7 @@
             <h5> {{$usuario->nombre}} </h5>
             <p> <span style="font-weight: bold">Email:</span> {{$usuario->email}} </p>
             <p> <span style="font-weight: bold">Contraseña:</span> {{$usuario->contrasenia}} </p> 
-            <p> <span style="font-weight: bold">Rol:</span> {{$usuario->rol}} </p>
+            {{-- <p> <span style="font-weight: bold">Rol:</span> {{$usuario->rol}} </p> --}}
             <a href="/usuarios/{{$usuario->id}}/edit" class="btn btn-primary">Editar Usuario</a>                                                                                               
         </div>
     </div>

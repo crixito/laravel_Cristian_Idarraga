@@ -20,13 +20,13 @@
             <label for="contrasenia" class="form-label">Contraseña</label> 
             <input type="password" class="form-control" name="contrasenia" required="true">
         </div>
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="rol" class="form-label">Rol</label>
             <select class="form-control" name="rol">
                 <option value="estudiante">Estudiante</option>
                 <option value="maestro">Maestro</option>
             </select>
-        </div>
+        </div> --}}
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>    
 @endsection
