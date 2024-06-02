@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CursoController;
+use App\Http\Controllers\PalabraController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaludoController;
 use App\Http\Controllers\UsuarioController;
@@ -11,6 +11,6 @@ Route::get('/', function () {
 
 Route::get('/saludo', [SaludoController::class, 'saludito']);
 
-Route::resource('/cursos', CursoController::class);
+Route::resource('/palabras', PalabraController::class);
 
 Route::resource('/usuarios', UsuarioController::class);

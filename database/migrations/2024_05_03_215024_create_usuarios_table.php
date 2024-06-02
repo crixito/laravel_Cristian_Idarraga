@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('nombre', length: 100);
             $table->string('email', length: 100);
             $table->string('contrasenia', length: 100);
-            $table->string('rol', length: 50);
         });
     }
 

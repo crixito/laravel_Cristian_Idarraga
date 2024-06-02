@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/cursos">Palabras</a>
+                    <a class="nav-link" href="/palabras">Palabras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cursos/create">Crear Palabra</a>
+                    <a class="nav-link" href="/palabras/create">Crear Palabra</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/usuarios">Usuarios</a>

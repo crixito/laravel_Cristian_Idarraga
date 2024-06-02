@@ -1,0 +1,23 @@
+[33mcommit 40ecca0b65c0a851a7cead094e7ca40770d4faa0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: crixito <cristian.encu2@gmail.com>
+Date:   Fri May 31 18:38:10 2024 -0500
+
+    version 3 prueba
+
+[33mcommit 69a6830295a202d5cefa5012c67e9fc8ef907530[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: crixito <cristian.encu2@gmail.com>
+Date:   Sat May 18 17:09:45 2024 -0500
+
+    version 2
+
+[33mcommit 7a8501c427968e6a972a493f6fea6ad15c9f7156[m
+Author: crixito <cristian.encu2@gmail.com>
+Date:   Sat May 4 20:31:54 2024 -0500
+
+    version 1
+
+[33mcommit 937524371c3609c685436e581fad899e0ceb78b2[m
+Author: crixito <cristian.encu2@gmail.com>
+Date:   Fri Apr 26 21:15:46 2024 -0500
+
+    Set up a fresh Laravel app

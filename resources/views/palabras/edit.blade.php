@@ -6,16 +6,16 @@
     <br>
     <h3 class="text-center">Editar Palabra</h3>
     <br>
-    <form action="/cursos/{{$curso->id}}" method="post" enctype="multipart/form-data"> 
+    <form action="/palabras/{{$palabra->id}}" method="post" enctype="multipart/form-data"> 
         @method('PUT')
         @csrf
         <div class="mb-3">
             <label for="nombrecurso" class="form-label">Nombre de palabra</label> 
-            <input type="text" class="form-control" value="{{$curso->nombre}}" name="nombre" required="true">
+            <input type="text" class="form-control" value="{{$palabra->nombre}}" name="nombre" required="true">
         </div>
         <div class="mb-3">
             <label for="descripcion" class="form-label">Descripción</label> 
-            <textarea class="form-control" name="descripcion" required="true">{{$curso->descripcion}}</textarea>
+            <textarea class="form-control" name="descripcion" required="true">{{$palabra->descripcion}}</textarea>
         </div>
         {{-- <div class="form-group">
             <label for="imagen">Cargar imagen</label>

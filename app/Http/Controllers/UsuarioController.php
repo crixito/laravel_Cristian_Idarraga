@@ -33,7 +33,7 @@ class UsuarioController extends Controller
         $usuario->nombre = $request->input('nombreusuario');
         $usuario->email = $request->input('email');
         $usuario->contrasenia = $request->input('contrasenia');
-        $usuario->rol = $request->input('rol');
+        // $usuario->rol = $request->input('rol');
 
         $usuario->save();
 

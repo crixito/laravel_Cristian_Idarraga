@@ -2,4 +2,10 @@ $primary: rgb(39, 203, 212);
 $danger: rgb(5, 3, 104);
 $success: rgb(161, 228, 54);
 
+$body-bg: rgb(245, 245, 245); 
+
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    background-color: $body-bg;
+}

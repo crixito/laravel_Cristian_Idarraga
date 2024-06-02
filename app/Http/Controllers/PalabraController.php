@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Curso;
+use App\Models\Palabra;
 use Illuminate\Http\Request;
 
-class CursoController extends Controller
+class PalabraController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $curso = Curso::all();
-        return view('cursos.index', compact('curso'));
+        $palabra = Palabra::all();
+        return view('palabras.index', compact('palabra'));
     }
 
     /**
@@ -21,7 +21,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        return view('cursos.create');
+        return view('palabras.create');
     }
 
     /**
@@ -29,22 +29,22 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        $curso = new Curso();
-        $curso->nombre = $request->input('nombrecurso');
-        $curso->descripcion = $request->input('descripcion');
+        $palabra = new Palabra();
+        $palabra->nombre = $request->input('nombrecurso');
+        $palabra->descripcion = $request->input('descripcion');
 
         if($request->hasFile('imagen')){
-            $curso->imagen = $request->file('imagen')->storePublicly('cursos', 'public');
-            // $course->imagen = $request->file('imagen')->store('public/cursos'); // otra manera
+            $palabra->imagen = $request->file('imagen')->storePublicly('palabras', 'public');
+            // $course->imagen = $request->file('imagen')->store('public/palabras'); // otra manera
         }
 
-        $curso->save();
+        $palabra->save();
 
         // Agrega un mensaje flash a la sesión
         session()->flash('message', 'Palabra guardada con éxito');
 
         // Redirige al usuario a la página que desees
-        return redirect()->route('cursos.index');
+        return redirect()->route('palabras.index');
     }
 
     /**
@@ -52,8 +52,8 @@ class CursoController extends Controller
      */
     public function show(string $id)
     {
-        $curso = Curso::find($id);
-        return view('cursos.show', compact('curso'));
+        $palabra = Palabra::find($id);
+        return view('palabras.show', compact('palabra'));
     }
 
     /**
@@ -61,8 +61,8 @@ class CursoController extends Controller
      */
     public function edit(string $id)
     {
-        $curso = Curso::find($id);
-        return view('cursos.edit', compact('curso'));
+        $palabra = Palabra::find($id);
+        return view('palabras.edit', compact('palabra'));
     }
 
     /**
@@ -70,20 +70,20 @@ class CursoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $curso = Curso::find($id);
-        $curso->fill($request->except('imagen'));
+        $palabra = Palabra::find($id);
+        $palabra->fill($request->except('imagen'));
         if ($request->hasFile('imagen')){ //si desde ese campo viene un archivo hacer:
-            $curso->imagen = $request->file('imagen')->store('public/cursos');
-            $curso->save();
+            $palabra->imagen = $request->file('imagen')->store('public/palabras');
+            $palabra->save();
         }else{
-            $curso->save();
+            $palabra->save();
         }
 
         // Agrega un mensaje flash a la sesión
         session()->flash('message', 'Palabra actualizada con éxito');
 
         // Redirige al usuario a la página que desees
-        return redirect()->route('cursos.index');
+        return redirect()->route('palabras.index');
     }
 
     /**
@@ -91,13 +91,13 @@ class CursoController extends Controller
      */
     public function destroy(string $id)
     {
-        $curso = Curso::find($id);
-        $curso->delete();
+        $palabra = Palabra::find($id);
+        $palabra->delete();
 
         // Agrega un mensaje flash a la sesión
         session()->flash('message', 'Palabra eliminada con éxito');
 
         // Redirige al usuario a la página que desees
-        return redirect()->route('cursos.index');
+        return redirect()->route('palabras.index');
     }
 }

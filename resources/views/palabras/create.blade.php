@@ -6,7 +6,7 @@
     <br>
     <h3>Crear Nueva Palabra</h3>
     <br>
-    <form action="/cursos" method="post" enctype="multipart/form-data"> 
+    <form action="/palabras" method="post" enctype="multipart/form-data"> 
         @csrf
         <div class="mb-3">
             <label for="nombrecurso" class="form-label">Nombre de Palabra</label> 
